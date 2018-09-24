@@ -1,7 +1,7 @@
 var websiteApp = new Vue({
   el: '#hello',
   data: {
-    results: [
+    result: [
       {
         gender: '',
         name: {
@@ -34,7 +34,7 @@ var websiteApp = new Vue({
       fetchResults () {
         fetch('https://randomuser.me/api/?format=json')
         .then( response => response.json() )
-        .then( json => {websiteApp.results = json.results[0];
+        .then( json => {websiteApp.result = json.results;
         } )
         .catch( err => {
           console.log('RESULTS FETCH ERROR:');
@@ -43,7 +43,7 @@ var websiteApp = new Vue({
         },
 
         agenumber: function(){
-          const xy= moment(this.results.dob.date).diff(moment(), 'years');
+          const xy= moment(this.result[0].dob.date).diff(moment(), 'years');
           return Math.abs(xy);
         },
       pretty_date: function (d) {

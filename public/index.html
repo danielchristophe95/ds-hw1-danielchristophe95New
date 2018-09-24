@@ -28,7 +28,7 @@
 
 
     <main  class="container-fluid">
-      <div>
+
 
 
         <h1 class="header">About Me</h1>
@@ -41,18 +41,20 @@
 
 
             <br/>
-            <div id="hello">
-              <a :href="results.picture.large"> <img :src="results.picture.large" height="300" alt="Profile Photo" ></a>
+            <div  class="container" id="hello">
+              <div class="row" v-for="user in result">
+              <a :href="user.picture.large"> <img :src="user.picture.large" height="300" alt="Profile Photo" class="img-responsive" ></a>
             <br/>
             <p style="background-color:LightBlue">
-              <b>Name:</b> {{results.name.first}} <br/>
-              <b>Birthplace:</b> {{results.location.city}}<br/>
-              <b>Birthdate:</b> {{pretty_date(results.dob.date)}}<br/>
+              <b>Name:</b> {{user.name.first}} <br/>
+              <b>Birthplace:</b> {{user.location.city}}<br/>
+              <b>Birthdate:</b> {{pretty_date(user.dob.date)}}<br/>
               <b>Age:</b> {{agenumber()}}<br/>
-              <b>Email:</b> <a :href="'mailto:'+results.email"> {{results.email}}</a>
+              <b>Email:</b> <a :href="'mailto:'+user.email"> {{user.email}}</a>
             </p>
-            <button class="btn" @click="refresh">Refresh</button>
           </div>
+          <button class="btn" @click="refresh">Refresh</button>
+          
           </div>
 
 
