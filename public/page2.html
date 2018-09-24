@@ -1,0 +1,134 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style1.css"/>
+
+<style>
+/* .bg{
+    background-image: url("");
+     /* Full height */
+     /* height: 150%;
+     /* Center and scale the image nicely */
+     /* background-position: center;
+     background-repeat: repeat;
+     background-size: cover;
+} */
+}
+
+</style>
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>About Me</title>
+  </head>
+  <body>
+  <div>
+    <h1 class="header">Album Listing</h1>
+  <div>
+    <div class="navigation">
+      <a class="active" href="index.html">Home</a>
+      <a href="page2.html">Album Listing</a>
+      <a href="page3.html">Favorite Bands</a>
+    </div>
+<br/>
+</br/>
+
+<div class="container-fluid">
+    <table id="myTable">
+    <thead>
+      <th>ID</th>
+      <th>Band</th>
+      <th>Album</th>
+      <th>Price</th>
+    </thead>
+    <tr>
+      <td>1</td>
+      <td>The Jimi Hendrix Experience</td>
+      <td>Axis: Bold as Love</td>
+      <td>$9.00</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Red Hot Chili Peppers</td>
+      <td>Stadium Arcadium</td>
+      <td>$14.50</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Smashing Pumpkins</td>
+      <td>Siamense Dream</td>
+      <td>$10.99</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Pink Floyd</td>
+      <td>Dark Side of the Moon</td>
+      <td>$12.00</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Metallica</td>
+      <td>Master of Puppets</td>
+      <td>$8.50</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Led Zeppelin</td>
+      <td>Led Zeppelin IV</td>
+      <td>$11.50</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>The Doors</td>
+      <td>Strange Days</td>
+      <td>$7.99</td>
+    </tr>
+  </table>
+<br  />
+<br />
+<h2>Enter Table Data</h2>
+  <form>
+  <div class="form-group">
+    <label for="ID"> <b>ID</b></label>
+    <input type="number" class="form-control" id="ID" placeholder="Enter ID number">
+  </div>
+  <div class="form-group">
+    <label for="Band"><b>Band</b></label>
+    <input type="text" class="form-control" id="Band" placeholder="Enter band name">
+  </div>
+  <div class="form-group">
+    <label for="Album"><b>Album</b></label>
+    <input type="text" class="form-control" id="Album" placeholder="Enter album name">
+  </div>
+  <div class="form-group">
+    <label for="Price ($)"><b>Price</b></label>
+    <input type="number" class="form-control" id="Price" placeholder="Enter album price">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+  </div>
+  </div>
+  </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="js/tablesort.min.js"></script>
+    <script src='js/tablesort.number.js'></script>
+    <script>
+    //tablesort plugin
+    new Tablesort(document.getElementById('myTable'));x
+    </script>
+
+  </body>
+</html>

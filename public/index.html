@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style1.css"/>
+<style>
+/* .bg{
+    background-image: url("");
+     /* Full height */
+     /* height: 100%;
+     /* Center and scale the image nicely */
+     /* background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+} */
+</style>
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>About Me</title>
+  </head>
+  <body>
+
+
+    <main  class="container-fluid">
+      <div>
+
+
+        <h1 class="header">About Me!</h1>
+
+          <div class="navigation">
+            <a class="active" href="index.html">Home</a>
+            <a href="page2.html">Album Listing</a>
+            <a href="page3.html">Favorite Bands</a>
+          </div>
+
+
+            <br/>
+            <div id="hello">
+              <a :href="results.picture.large"> <img :src="results.picture.large" height="300" alt="Profile Photo" ></a>
+            <br/>
+            <p style="background-color:LightBlue">
+              <b>Name:</b> {{results.name.first}} <br/>
+              <b>Birthplace:</b> {{results.location.city}}<br/>
+              <b>Birthdate:</b> {{pretty_date(results.dob.date)}}<br/>
+              <b>Age:</b> {{agenumber()}}<br/>
+              <b>Email:</b> <a :href="'mailto:'+results.email"> {{results.email}}</a>
+            </p>
+            <button class="btn" @click="refresh">Refresh</button>
+          </div>
+          </div>
+
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/websiteApp.js"></script>
+
+    <!-- <script src="js/tablesort.min.js"></script> -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
