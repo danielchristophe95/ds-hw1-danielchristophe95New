@@ -1,6 +1,6 @@
 <?php
 
-require '../../app/common.php'
+require '../../app/common.php';
 
 $tableid = intval($_GET['tableid'] ?? 0);
 
