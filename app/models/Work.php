@@ -19,12 +19,10 @@ class Work
     $statement = $db->prepare($sql);
 
     $success = $statement->execute(
-      array(
-        $_GET['id'],
-        $_GET['comment']
-      )
+      []
     );
 
+    $arr = [];
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
 
       var_dump($row);
