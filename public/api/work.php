@@ -12,7 +12,7 @@ $workArr = Work::getAllWork($id);
 
 $json = json_encode($workArr);
 
-echo hello;
+echo $json;
 //go to db to get work associated with ID
 // convert to JSON
 //print
