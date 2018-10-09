@@ -30,8 +30,7 @@ class Work
       array_push($arr, $workItem);
     }
 
-    var_dump($arr);
-    die;
+  
     return $arr;
   }
 }
