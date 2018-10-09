@@ -8,7 +8,6 @@ class Work
   public function __construct($row) {
     $this->id = $row['id'];
     $this->comment = $row['comment'];
-    ]
   }
 
   public static getAllWork(int $tableid) {
