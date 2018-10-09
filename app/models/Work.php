@@ -13,15 +13,15 @@ class Work
   public function create() {
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
-    $sql = 'INSERT webpage (id, comment)
+    $sql = 'INSERT INTO webpage (id, comment)
             VALUES (?, ?)';
 
     $statement = $db->prepare($sql);
 
     $success = $statement->execute([
-    $this->id,
-    $this->comment
-  ]);
+      $this->id,
+      $this->comment
+    ]);
 
   $this->id = $db->lastInsertId();
   }
@@ -45,8 +45,7 @@ class Work
 
       array_push($arr, $workItem);
     }
-
-
+    
     return $arr;
   }
 }
