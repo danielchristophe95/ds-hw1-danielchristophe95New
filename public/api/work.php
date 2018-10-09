@@ -5,7 +5,7 @@ require '../../app/common.php';
 $id = intval($_GET['id'] ?? 0);
 
 if ($id < 1) {
-  throw new Exception('Invalid ID');
+  throw new Exception('Invalid IDD');
 }
 
 $workArr = Work::getAllWork($id);
