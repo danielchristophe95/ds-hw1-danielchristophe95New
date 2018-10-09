@@ -2,11 +2,9 @@
 
 require '../../app/common.php';
 
-$id = intval($_GET['id'] ?? 0);
-
-//FIX THIS!!!!!!!!!!!!!!!!??
-if ($id < 1) {
-  throw new Exception('Invalid ID');
+if ($SERVER['REQUEST_METHOD'] == 'POST') {
+  require 'workPost.php';
+  exit;
 }
 
 $workArr = Work::getAllWork($id);

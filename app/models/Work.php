@@ -6,8 +6,24 @@ class Work
   public $comment;
 
   public function __construct($row) {
-    $this->id = intval($row['id']);
+    $this->id = isset($row['id']) ? intval($row['id']) : null;
     $this->comment = $row['comment'];
+  }
+
+  public function create() {
+    $db = new PDO(DB_SERVER, DB_USER, DB_PW);
+
+    $sql = 'INSERT webpage (id, comment)
+            VALUES (?, ?)';
+
+    $statement = $db->prepare($sql);
+
+    $success = $statement->execute([
+    $this->id,
+    $this->comment
+  ]);
+
+  $this->id = $db->lastInsertId();
   }
 
   public static function getAllWork(int $id) {
