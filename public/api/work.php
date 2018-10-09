@@ -2,13 +2,13 @@
 
 require '../../app/common.php';
 
-$tableid = intval($_GET['tableid'] ?? 0);
+$id = intval($_GET['id'] ?? 0);
 
-if ($tableid < 1) {
+if ($id < 1) {
   throw new Exception('Invalid ID');
 }
 
-$workArr = Work::getAllWork($tableid);
+$workArr = Work::getAllWork($id);
 
 $json = json_encode($workArr);
 

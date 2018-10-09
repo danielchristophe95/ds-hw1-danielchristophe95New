@@ -10,7 +10,7 @@ class Work
     $this->comment = $row['comment'];
   }
 
-  public static function getAllWork(int $tableid) {
+  public static function getAllWork(int $id) {
     //connect to db, run query, read results, for each row make new work object, return the array of work objects
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
     var_dump($db);
