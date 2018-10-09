@@ -6,7 +6,7 @@ class Work
   public $comment;
 
   public function __construct($row) {
-    $this->id = $row['id'];
+    $this->id = intval($row['id']);
     $this->comment = $row['comment'];
   }
 
@@ -25,14 +25,13 @@ class Work
     $arr = [];
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
 
-      var_dump($row);
-      die;
-
       $workItem = new Work($row);
 
       array_push($arr, $workItem);
     }
 
+    var_dump($arr);
+    die;
     return $arr;
   }
 }
