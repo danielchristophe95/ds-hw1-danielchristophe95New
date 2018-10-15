@@ -34,8 +34,7 @@ var websiteApp = new Vue({
       fetchResults () {
         fetch('https://randomuser.me/api/?format=json')
         .then( response => response.json() )
-        .then( json => {websiteApp.result = json.results;
-        } )
+        .then( json => {websiteApp.result = json.results;})
         .catch( err => {
           console.log('RESULTS FETCH ERROR:');
           console.log(err);
@@ -53,10 +52,9 @@ var websiteApp = new Vue({
           this.fetchResults();
         }
       },
-  created () {
-    this.fetchResults();
 
-    }
+  created () {
+    this.fetchResults();}
   })
 
 
