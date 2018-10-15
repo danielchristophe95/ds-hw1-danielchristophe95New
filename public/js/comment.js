@@ -1,7 +1,7 @@
 var commentApp = new Vue({
   el: '#commentMain',
   data: {
-    comment: {
+    newComment: {
       id: 0,
       comment:''
     },
@@ -13,8 +13,7 @@ var commentApp = new Vue({
     handleWorkForm(e) {
       // TODO: Check validity
 
-      this.workForm.id = this.workSpan;
-      this.workForm.comment = this.taskId;
+
       const s = JSON.stringify(this.workForm);
       console.log(s);
 
@@ -39,8 +38,8 @@ var commentApp = new Vue({
 
     getEmptyWorkForm() {
       return {
-        id: 0,
-        comment: ''
+        id: this.newComment.id,
+        comment: this.newComment.comment
       }
     },
   },
