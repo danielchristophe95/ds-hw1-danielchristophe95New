@@ -33,8 +33,8 @@ var commentApp = new Vue({
 
     getEmptyCommentForm() {
       return {
-        // id: this.commentList.id,
-        comment:null
+        id: this.commentList.id,
+        comment: this.commentList.comment
       }
     },
   },
