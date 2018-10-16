@@ -40,7 +40,7 @@
   <form id="newCommentForm" @submit.prevent="handleWorkForm">
   <div class="form-group">
     <label for="comment"><b>Enter a new comment:</b></label>
-    <input type="text" v-model="workForm.comment" class="form-control" id="comment" placeholder="Enter comment" required>
+    <input type="text" v-model="commentList.comment" class="form-control" id="comment" placeholder="Enter comment" required>
   </div>
   <button type="submit" id="submitNewComment" class="btn btn-primary">Submit</button>
 </form>
