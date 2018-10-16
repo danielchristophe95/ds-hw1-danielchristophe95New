@@ -6,11 +6,10 @@ var commentApp = new Vue({
   },
 
   methods: {
-    handleWorkForm(e) {
+    handleCommentForm(e) {
       // TODO: Check validity
 
-
-      const s = JSON.stringify(this.workForm);
+      const s = JSON.stringify(this.newCommentForm);
       console.log(s);
 
       // POST to remote server
@@ -22,17 +21,17 @@ var commentApp = new Vue({
         body: s // body data type must match "Content-Type" header
       })
       .then( response => response.json() )
-      .then( json => {this.work.push(json)})
+      .then( json => {this.commentList.push(json)})
       .catch( err => {
-        console.error('WORK POST ERROR:');
+        console.error('COMMENT POST ERROR:');
         console.error(err);
       })
 
       // Reset workForm
-      this.workForm = this.getEmptyWorkForm();
+      this.newCommentForm = this.getEmptyCommentForm();
     },
 
-    getEmptyWorkForm() {
+    getEmptyCommentForm() {
       return {
         id: this.newComment.id,
         comment: this.newComment.comment
@@ -42,20 +41,18 @@ var commentApp = new Vue({
 
   created () {
     // Populate workForm with default values
-    this.workForm = this.getEmptyWorkForm();
+    this.newCommentForm = this.getEmptyCommentForm();
 
     // Do data fetch
     const url = new URL(window.location.href);
     const id = url.searchParams.get('id');
-    console.log('ID: '+ taskId);
+    console.log('ID: '+ id);
     this.id = id;
 
     if (!id) {
       //TODO: Error? 404?
       //e.g., window.location = '404.html';
     }
-
-    this.workForm = this.getEmptyWorkForm();
 
     // TODO: Fetch task-specific data
     // fetch('api/task?id=4')
