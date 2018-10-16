@@ -29,7 +29,7 @@
         </thead>
         <tbody v-for="w in commentList"
         :key="w.id"
-        :id="'task-' + task.id + '-commentList-' + w.id">
+        :id="'newCommentForm-' + newCommentForm.id + '-commentList-' + w.id">
           <td>{{prettyDate(w.start)}}</td>
           <td>{{prettyDate(w.stop)}}</td>
         </tbody>
