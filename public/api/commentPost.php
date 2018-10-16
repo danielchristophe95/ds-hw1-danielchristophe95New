@@ -1,6 +1,6 @@
 <?php
 
-$commentVar = new Comment($_POST);
+$commentVar = new Work($_POST);
 
 $commentVar->create();
 

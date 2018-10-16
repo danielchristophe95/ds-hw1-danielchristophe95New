@@ -21,7 +21,7 @@ var commentApp = new Vue({
         body: s // body data type must match "Content-Type" header
       })
       .then( response => response.json() )
-      .then( json => {this.commentList.push(json)})
+      .then( json => {this.newCommentForm.push(json)})
       .catch( err => {
         console.error('COMMENT POST ERROR:');
         console.error(err);
