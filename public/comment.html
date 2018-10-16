@@ -1,8 +1,4 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" href="css/style1.css"/>
-
 <!doctype html>
-
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -10,57 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style1.css">
 
-    <title>Comment</title>
+    <title>Comment Dashboard</title>
   </head>
   <body>
-  <div>
-    <h1 class="header">Comment</h1>
-<br/>
-</br/>
 
-<div class="container-fluid">
-    <table id="commentTable">
-    <thead>
-      <th>ID</th>
-      <th>Comment</th>
-    </thead>
-    <tbody id="commentTableBody" v-for:"w in work">
-      <tr>
-        <td>1</td>
-        <td>The Jimi Hendrix Experience</td>
-      </tr>
-    </tbody>
-  </table>
 
-<br  />
-<br />
+    <main id="commentMain" class="container-fluid">
 
-  <form id="newCommentForm" @submit.prevent="handleNewCommentForm">
-  <div class="form-group">
-    <label for="comment"><b>Enter a new comment:</b></label>
-    <input type="text" v-model="commentList.comment" class="form-control" id="comment" placeholder="Enter comment" required>
-  </div>
-  <button type="submit" id="submitNewComment" class="btn btn-primary">Submit</button>
-</form>
 
-  </div>
-  </div>
-  </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <script src="js/tablesort.min.js"></script>
-    <!-- <script src='js/tablesort.number.js'></script> -->
-    <script>
-    //tablesort plugin
-    new Tablesort(document.getElementById('commentTable'));
-    </script>
+      <h3>Comment</h3>
+      <table class="table table-striped table-sm" id="commentTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody v-for="w in commentList" id="commentTableBody"
+        :key="w.id"
+        :id="'newCommentForm-' + newCommentForm.id + '-commentList-' + w.id">
+          <td>{{w.id}}</td>
+          <td>{{w.comment}}</td>
+        </tbody>
+      </table>
+
+              <hr>
+                <h3>Add Comment</h3>
+
+                <form id="newCommentForm" @submit.prevent="handleNewCommentForm">
+                <div class="form-group">
+                  <label for="comment"><b>Enter a new comment:</b></label>
+                  <input type="text" v-model="commentList.comment" class="form-control" id="comment" placeholder="Enter comment" required>
+                </div>
+                <button type="submit" id="submitNewComment" class="btn btn-primary">Submit</button>
+              </form>
+              <!-- </div>
+            </div>
+          </div>
+        </div> -->
+
+    </main>
+
+    <!-- We need Bootstrap's modal JS, thus we also need jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- moment.js via CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/comment.js"></script>
 
   </body>
 </html>

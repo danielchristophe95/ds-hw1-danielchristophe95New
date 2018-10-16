@@ -22,7 +22,7 @@ public static function fetchAll() {
   $arr = [];
   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
 
-    $workItem = new Comment($row);
+    $workItem = new Work($row);
 
     array_push($arr, $workItem);
   }
