@@ -13,7 +13,7 @@ $id = intval($_GET['id'] ?? 0);
 //   throw new Exception('Invalid ID');
 // }
 
-$workArr = Work::getAllWork($id);
+$workArr = Comment::fetchAll($id);
 
 $json = json_encode($workArr, JSON_PRETTY_PRINT);
 
