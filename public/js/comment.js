@@ -40,19 +40,21 @@ var commentApp = new Vue({
   },
 
   created () {
+
+
+    // Do data fetch
+    const url = new URL(window.location.href);
+    const id = url.searchParams.get('id');
+    console.log('ID: '+ id);
+    this.id = id;
+
+    if (!id) {
+      //: Error? 404?
+      //e.g., window.location = '404.html';
+    }
+
     // Populate workForm with default values
     this.newCommentForm = this.getEmptyCommentForm();
-
-    // // Do data fetch
-    // const url = new URL(window.location.href);
-    // const id = url.searchParams.get('id');
-    // console.log('ID: '+ id);
-    // this.id = id;
-    //
-    // if (!id) {
-    //   //: Error? 404?
-    //   //e.g., window.location = '404.html';
-    // }
 
     // TODO: Fetch task-specific data
     // fetch('api/task?id=4')
